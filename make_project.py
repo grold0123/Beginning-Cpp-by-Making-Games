@@ -15,8 +15,9 @@ project_build_dir.mkdir(exist_ok=True)
 main_cpp = project_src_dir/'main.cpp'
 main_cpp.touch(exist_ok=True)
 with open (main_cpp,'w') as file:
-    main = 'int '+'main'+' ()'+' {}'
+    main = 'int '+'main'+' ()'+' {\nstd::cout<< "Hello world" << std::endl;\n}'
     file.write(f'/*{project_name}*/\n')
+    file.write('#include<iostream>\n')
     file.write(main)
 
 subprocess.run(['code',main_cpp])
