@@ -1,4 +1,4 @@
-import subprocess,pathlib,sys
+import subprocess,pathlib,os
 
 
 base_path = pathlib.Path()
@@ -10,4 +10,4 @@ push = ['git','push']
 subprocess.run(add)
 subprocess.run(commit)
 subprocess.run(push)
-sys('cls')
+os.system('cls')
