@@ -13,6 +13,7 @@ int main () {
     while (true){
         count += 1;        
         if (count > 10){
+            cout << "This is the end, bye!\n\n";
             break;
         }
         if (count == 5){

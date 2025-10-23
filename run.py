@@ -9,6 +9,8 @@ project_src_dir = src_dir/project_name
 project_build_dir = build_dir/project_name
 
 cpp_files = [str(cpp_file) for cpp_file in project_src_dir.iterdir()]
+
 executable_file = str(project_build_dir/"main.exe")
+
 subprocess.run(['g++',*cpp_files,'-o',executable_file])
 subprocess.run([executable_file])
