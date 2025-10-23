@@ -7,6 +7,7 @@ add = ['git','add','C:/projects/Beginning-Cpp-by-Making-Games']
 commit = ['git','commit','-m','update']
 push = ['git','push']
 
+print('\n\nUpdating repository\n\n')
 subprocess.run(add)
 subprocess.run(commit)
 subprocess.run(push)
