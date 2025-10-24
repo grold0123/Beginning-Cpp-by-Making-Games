@@ -3,14 +3,16 @@ import subprocess,pathlib,os
 
 base_path = pathlib.Path()
 
-add = ['git','add','C:/projects/Beginning-Cpp-by-Making-Games']
-commit = ['git','commit','-m','update']
-push = ['git','push']
+args = [
+    ['git','add','C:/projects/Beginning-Cpp-by-Making-Games'],#add
+    ['git','commit','-m','update'],#commit
+    ['git','push'],#push
+]
 
 os.system('cls')
 print('\n\nUpdating repository\n\n')
-subprocess.run(add)
-subprocess.run(commit)
-subprocess.run(push)
-os.system('cls')
-print('\n\nRepository updated\n\n')
+for arg in args:
+    print('\n\n')
+    subprocess.run(arg)
+    print('\n\nsuccesful\n\n')
+print('\n\nRepository successfully updated\n\n')
