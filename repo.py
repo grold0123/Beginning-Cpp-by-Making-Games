@@ -12,7 +12,7 @@ args = [
 os.system('cls')
 print('\n\nUpdating repository\n\n')
 for msg,arg in args:
-    print('\n\n')
+    
     subprocess.run(arg)
     print(f'\n\n{msg} succesful\n\n')
 print('\n\nRepository successfully updated\n\n')
