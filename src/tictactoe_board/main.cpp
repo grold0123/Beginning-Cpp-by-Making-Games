@@ -44,7 +44,6 @@ class Board{
                 }
                 
                 cout << endl;
-
                 
             }
             cout << "-------------";
@@ -66,4 +65,12 @@ int main () {
 system("cls");
 Board board;
 board.display();
+slow_print("\n\n'X' moves to the empty location.\n\n");
+board.board[1][0] = 'X';
+
+slow_print("\n\nNow the tic-tac-toe board is :\n");
+board.display();
+
+slow_print("\n'X' wins!");
+
 }
