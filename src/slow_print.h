@@ -2,6 +2,13 @@
 #include<thread>
 #include<string>
 #include<iostream>
+#include<vector>
+#include<ranges>
+#include<random>
+#include<algorithm>
+#include<ctime>
+#include<cstdlib>
+
 
 using namespace std;
 
