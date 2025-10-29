@@ -5,33 +5,50 @@ demonstrates returning a pointer
 #include<iostream>
 #include<string>
 #include<vector>
+#include<cstdlib>
+#include<memory>
 
 using namespace std;
 using constant_vector_string_pointer = vector<string>*const;
 using string_container = vector<string>;
 using string_pointer = string*;
 
-string*pointer_to_element(string_container vec,int i);
+
+string*pointer_to_element(constant_vector_string_pointer vec,int i);
+
+void display_inventory(const string_container*vec_pointer);
 
 int main(){
-    
+
+    system("cls");
+
     string_container inventory;
     
     inventory.push_back("sword");
     inventory.push_back("armor");
     inventory.push_back("shield");
 
-    cout << "\nSending the object pointed to by returned pointer: " << *(pointer_to_element(&inventory,0));
+    cout << "\nDisplaying a derefenced pointer to the first element in inventory *(pointer_to_element(&inventory,0)): " << *(pointer_to_element(&inventory,0));
 
-    cout << "\n\nAssigning the returned pointer to another pointer.";string_pointer string_pointer = pointer_to_element(&inventory,1);
+    cout << "\n\nAssigning a pointer to the second item. string_pointer string_pointer = pointer_to_element(&inventory,1) ";string_pointer string_pointer = pointer_to_element(&inventory,1);
 
-    cout << "\n\nSending the object pointed to by new pointer to cout:" << *string_pointer;
+    cout << "\n\nDisplaying the dereferenced pointer to the second item: *string_pointer : " << *string_pointer;
 
+    cout << "\n\n";
 
-
+    display_inventory(&inventory);
 }
 
+string*pointer_to_element(constant_vector_string_pointer vec_pointer,int i){ 
+    return &(*vec_pointer)[i];
+}
 
-string*pointer_to_element(string_container vec,int i){ 
-    return &(vec[i]);
+void display_inventory(const string_container*vec_pointer){    
+    
+    unique_ptr<int> count = make_unique<int>(1);
+    cout << "Inventory:\n\n";
+    for (const string&item:*vec_pointer){
+        cout << '\t' << *count << ". " << item << '\n';
+        (*count)++;
+    }
 }
