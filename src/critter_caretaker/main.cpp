@@ -5,6 +5,7 @@ run.py critter_caretaker
 **************************************************/
 #include<iostream>
 #include<cstdlib>
+#include<string>
 using namespace std;
 
 
@@ -14,29 +15,118 @@ constexpr char FEED = '2';
 constexpr char PLAY = '3';
 constexpr char CHECK = '4';
 
+//[CLASS DECLARATION]
+/*
+private:
+    int hunger,boredom;
+    void pass_time(int time=1);
+public:
+    int get_mood()const;
+    void talk();
+    void eat(int food = 4);
+    void play(int fun = 4);
+    Critter(int hunger_arg,int boredom_arg);
+*/
 class Critter{
 private:
     int hunger,boredom;
-    void pass_time();
+    void pass_time(int time=1);
 public:
-    int get_mood();
+    int get_mood()const;
     void talk();
-    void eat();
-    void play();
+    void eat(int food = 4);
+    void play(int fun = 4);
     Critter(int hunger_arg,int boredom_arg);
 };
-int Critter::get_mood(){cout << "Your mama";return 1;};
-void Critter::talk(){cout << "Your papa";};
-void Critter::eat(){cout << "Your bro";};
-void Critter::play(){cout << "Your sis";};
+
+//return (this->hunger + this->boredom);
+inline int Critter::get_mood() const{    
+    return (this->hunger + this->boredom);
+};
+
+/*
+cout << "I'm a critter and I feel ";
+int mood = this->get_mood();    
+if (mood > 15){
+    cout << "mad.\n";
+}
+else if (mood > 10) {
+    cout << "frustrated.\n";
+}
+else if (mood > 5) {
+    cout << "frustrated.\n";
+}
+else {
+    cout << "happy.\n";
+}
+this->pass_time();
+*/
+void Critter::talk(){
+    cout << "I'm a critter and I feel ";
+    int mood = this->get_mood();    
+    if (mood > 15){
+        cout << "mad.\n";
+    }
+    else if (mood > 10) {
+        cout << "frustrated.\n";
+    }
+    else if (mood > 5) {
+        cout << "frustrated.\n";
+    }
+    else {
+        cout << "happy.\n";
+    }
+    this->pass_time();
+};
+
+/*
+cout << "Brruppp.\n";
+this->hunger -= food;
+if (this->hunger < 0) this->hunger = 0;
+this->pass_time();
+*/
+void Critter::eat(int food){
+    cout << "Brruppp.\n";
+    this->hunger -= food;
+    if (this->hunger < 0) this->hunger = 0;
+    this->pass_time();
+};
+
+/*
+cout << "Wheee!\n";
+this->boredom -= fun;
+if (this->boredom < 0) this->boredom = 0;
+this->pass_time();
+*/
+void Critter::play(int fun){
+    cout << "Wheee!\n";
+    this->boredom -= fun;
+    if (this->boredom < 0) this->boredom = 0;
+    this->pass_time();
+};
+
+/*
+:hunger(hunger_arg),boredom(boredom_arg)
+{};
+*/
 Critter::Critter(int hunger_arg,int boredom_arg)
 :
 hunger(hunger_arg),boredom(boredom_arg)
 {};
 
+
+/*
+this->hunger += time_arg; 
+this->boredom += time_arg;
+*/
+void Critter::pass_time(int time_arg){
+    this->hunger += time_arg; 
+    this->boredom += time_arg;
+};
+
 void game(){
     char pet_interaction;
-    Critter dog(10,10);
+    Critter dog(1,2);
     while(true){
         
         cout << "\n\nChoices: ";
