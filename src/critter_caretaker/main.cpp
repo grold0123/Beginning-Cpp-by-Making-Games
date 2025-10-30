@@ -133,8 +133,7 @@ void game(){
         cout << "\n\tPress x: QUIT";
         cout << "\n\tPress 1: LISTEN";
         cout << "\n\tPress 2: FEED";
-        cout << "\n\tPress 3: PLAY";
-        cout << "\n\tPress 4: CHECK";
+        cout << "\n\tPress 3: PLAY";        
         cout << "\n\nWhat do you want to do with you critter: \n"; cin >> pet_interaction ;
         system("cls");
         if (pet_interaction == QUIT) break;
