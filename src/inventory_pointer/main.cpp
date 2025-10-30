@@ -34,9 +34,13 @@ int main(){
 
     cout << "\n\nDisplaying the dereferenced pointer to the second item: *string_pointer : " << *string_pointer;
 
+    cout << "\n\nChanging the value of the item the pointer is pointing to: *string_pointer = 'Healing Potion' " ; *string_pointer = "Healing Potion"; 
+
+    cout << "\n\nDisplaying current dereferenced value of pointer: " << *string_pointer;
+
     cout << "\n\n";
 
-    display_inventory(&inventory);
+    display_inventory(&inventory); 
 }
 
 string*pointer_to_element(constant_vector_string_pointer vec_pointer,int i){ 

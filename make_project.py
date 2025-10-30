@@ -16,7 +16,8 @@ main_cpp = project_src_dir/'main.cpp'
 main_cpp.touch(exist_ok=True)
 with open (main_cpp,'w') as file:
     main = 'int '+'main'+'()'+'{}'
-    file.write(f'/{"*"*50}\n{project_name}\n\n{"*"*50}/\n')        
+    file.write(f'/{"*"*50}\n{project_name}\nrun.py {project_name}\n\n{"*"*50}/\n')    
+
     file.write(main)
 
 subprocess.run(['code',main_cpp])
