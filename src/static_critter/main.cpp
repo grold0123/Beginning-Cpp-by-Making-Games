@@ -18,11 +18,13 @@ int Critter::number_of_critters = 0;
 Critter::Critter(int hunger_argument):hunger(hunger_argument){
     cout << "\n\nA critter has been born!" ; ++this->number_of_critters;
 };
-
+int Critter::get_number_of_critters(){
+    return number_of_critters;
+}
 int main(){
 
     cout << "\n\nThe total number of critters is: ";cout << Critter::number_of_critters;
     Critter dog,cat,rat;
-    cout << "\n\nThe total number of critters is: ";cout << Critter::number_of_critters;
+    cout << "\n\nThe total number of critters is: ";cout << Critter::get_number_of_critters();
     
 }
