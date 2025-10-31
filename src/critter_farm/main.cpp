@@ -47,8 +47,6 @@ private:
     vector<Critter> critters;
 };
 
-
-
 int main(){
     Critter cat("Poochie");    
     Farm farm(3);
